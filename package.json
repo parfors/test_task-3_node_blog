@@ -1,0 +1,35 @@
+{
+  "name": "test_task-3_node_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parfors/test_task-3_node_blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parfors/test_task-3_node_blog/issues"
+  },
+  "homepage": "https://github.com/parfors/test_task-3_node_blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "2.8.5",
+    "cross-env": "7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "4.17.1",
+    "joi": "^17.7.0",
+    "mongoose": "^6.7.2",
+    "nanoid": "^3.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
