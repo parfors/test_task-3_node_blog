@@ -9,7 +9,7 @@ const { ctrlWrapper } = require("../../helpers");
 
 router.post(
   "/register",
-  // validateBody(userJoiRegistrationSchema),
+  validateBody(userJoiRegistrationSchema),
   ctrlWrapper(ctrl.register)
 );
 

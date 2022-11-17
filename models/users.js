@@ -36,12 +36,12 @@ userSchema.post("save", handelSaveErrors);
 
 const userJoiRegistrationSchema = Joi.object({
   name: Joi.string().required(),
-  email: Joi.string().required(),
+  email: Joi.string().email({ minDomainSegments: 2 }).required(),
   password: Joi.string().required().min(6),
 });
 
 const userJoiLoginSchema = Joi.object({
-  email: Joi.string().required(),
+  email: Joi.string().email({ minDomainSegments: 2 }).required(),
   password: Joi.string().required().min(6),
 });
 
