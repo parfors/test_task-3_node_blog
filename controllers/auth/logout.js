@@ -7,8 +7,6 @@ const logout = async (req, res) => {
     { token: "" },
     { returnDocument: "after" }
   );
-  console.log(result);
-
   res.json({ message: "success", token: result.token });
 };
 
