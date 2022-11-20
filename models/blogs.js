@@ -5,7 +5,7 @@ const { handelSaveErrors } = require("../helpers");
 const categories = [
   "",
   "боевик",
-  "приключения ",
+  "приключения",
   "детектив",
   "фентази",
   "ужасы",
@@ -34,6 +34,9 @@ const blogSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "users",
+    },
+    coverUrl: {
+      type: String,
     },
   },
   {
