@@ -1,25 +1,14 @@
 const { Blog } = require("../../models/blogs");
 
 const getAll = async (req, res) => {
-  const { page = 1, limit = 100, category = "" } = req.query;
+  const { page = 1, limit = 100 } = req.query;
   const skip = page * limit - limit;
-  const normalizedCategory = category.toLowerCase();
-  let result;
-  if (normalizedCategory) {
-    result = await Blog.find(
-      { category: normalizedCategory },
-      "-createdAt -updatedAt"
-    )
-      .populate("owner", "name email")
-      .skip(skip)
-      .limit(limit);
-  } else {
-    result = await Blog.find({}, "-createdAt -updatedAt")
-      .populate("owner", "name email")
-      .skip(skip)
-      .limit(limit);
-  }
-  res.status(200).json({ data: result });
+  const length = (await Blog.find({})).length;
+  const result = await Blog.find({}, "-createdAt -updatedAt")
+    .populate("owner", "name email")
+    .skip(skip)
+    .limit(limit);
+  res.status(200).json({ data: result, total: length });
 };
 
 module.exports = getAll;
